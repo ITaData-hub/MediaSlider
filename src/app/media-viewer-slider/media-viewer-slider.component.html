@@ -1,5 +1,5 @@
 <div class="slider" #slider>
-  <button type="button" class="prev" #prevArrow>
+  <button type="button" class="prev" #prevArrow *ngIf="!hideArrows">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="31.021"
@@ -21,10 +21,10 @@
     <div class="slider-track" #sliderTrack>
       <ng-content select="[slide]"></ng-content>
     </div>
-    <div class="dots-container" #dotsContainer>
+    <div class="dots-container" #dotsContainer *ngIf="!hideDots">
     </div>
   </div>
-  <button type="button" class="next" #nextArrow>
+  <button type="button" class="next" #nextArrow *ngIf="!hideArrows">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="31.021"

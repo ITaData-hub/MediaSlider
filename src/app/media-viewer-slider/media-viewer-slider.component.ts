@@ -116,14 +116,8 @@ export class MediaViewerSliderComponent implements OnDestroy, AfterViewInit {
       this.renderer.removeClass(this.sliderRef.nativeElement, cls)
     );
     
-    if (this.hideArrows) {                                                                        // Добавляет модификаторы классов в зависимости от входных параметров.
-      this.renderer.addClass(this.sliderRef.nativeElement, 'no-arrows');
-    }
-    if (this.hideDots) {
-      this.renderer.addClass(this.sliderRef.nativeElement, 'no-dots');
-    }
     if (this.dotsInside) {
-      this.renderer.addClass(this.sliderRef.nativeElement, 'dots-inside');
+      this.renderer.addClass(this.sliderRef.nativeElement, 'dots-inside');                        // Добавляет модификаторы классов в зависимости от входных параметров.
     }
     if (this.arrowsInside) {
       this.renderer.addClass(this.sliderRef.nativeElement, 'arrows-inside');
