@@ -1,0 +1,45 @@
+<div class="slider" #slider>
+  <button type="button" class="prev" #prevArrow>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="31.021"
+      height="209.783"
+      viewBox="0 0 31.021 209.783"
+    >
+      <path
+        id="Контур_1581"
+        data-name="Контур 1581"
+        d="M110.428,5294,81.41,5395.239l29.018,108.01"
+        transform="translate(-80.372 -5293.725)"
+        fill="none"
+        stroke="rgba(255,255,255,0.5)"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+  <div class="slider-list" #sliderList>
+    <div class="slider-track" #sliderTrack>
+      <ng-content select="[slide]"></ng-content>
+    </div>
+    <div class="dots-container" #dotsContainer>
+    </div>
+  </div>
+  <button type="button" class="next" #nextArrow>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="31.021"
+      height="209.783"
+      viewBox="0 0 31.021 209.783"
+    >
+      <path
+        id="Контур_1581"
+        data-name="Контур 1581"
+        d="M81.41,5294l29.018,101.239L81.41,5503.249"
+        transform="translate(-80.444 -5293.725)"
+        fill="none"
+        stroke="rgba(255,255,255,0.5)"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+</div>

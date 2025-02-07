@@ -1,0 +1,221 @@
+// Переменные
+$main-color: #333;
+$background-color: #121212;
+$dot-color: #6d41e6;
+$dot-active-color: #333;
+
+// Общие стили для слайдера
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  touch-action: pan-y;
+  justify-content: center;
+  align-items: center;
+
+  &-list {
+    flex-grow: 1;
+    overflow: hidden;
+    height: 100%;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+
+    &.grabbing {
+      cursor: grabbing;
+    }
+
+    .dots-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      height: 12px;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $dot-color;
+        opacity: 50%;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+        user-select: none;
+
+        &.active {
+          background-color: $dot-active-color;
+        }
+      }
+    }
+  }
+
+  &-track {
+    display: flex;
+    flex-grow: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .prev,
+  .next {
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 20px;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    position: relative;
+    background-color: rgba($main-color, 0);
+
+    svg {
+      position: relative;
+      z-index: 9;
+      pointer-events: none;
+      height: 100%;
+      path {
+        stroke: #ffffff;
+      }
+    }
+
+    &.disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .slide {
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+  }
+
+  // Стили для мини-слайдера
+  &.arrows-inside {
+    position: relative;
+
+    .slider-list {
+      .dots-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 11;
+      }
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .slide {
+      height: 100%;
+
+      img {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &.no-dots {
+    .dots-container {
+      display: none;
+    }
+  }
+
+  &.no-arrows {
+    .prev,
+    .next {
+      display: none;
+    }
+  }
+
+  &.dots-inside {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+    touch-action: pan-y;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .slider-list {
+      flex-grow: 1;
+      overflow: hidden;
+      height: 100%;
+      cursor: grab;
+      display: flex;
+      position: relative;
+
+      &.grabbing {
+        cursor: grabbing;
+      }
+
+      .dots-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 15;
+
+        .dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: $dot-color;
+          opacity: 50%;
+          margin: 0 5px;
+          transition: background-color 0.3s ease;
+
+          &.active {
+            background-color: $dot-active-color;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .slider-track {
+      display: flex;
+      flex-grow: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .slide {
+      width: 100%;
+      flex-grow: 1;
+      flex-shrink: 0;
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
